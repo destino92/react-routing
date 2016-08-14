@@ -1,4 +1,4 @@
-var react = require('react');
+var React = require('react');
 
 var Page2 = React.createClass({
     render: function() {
@@ -7,6 +7,5 @@ var Page2 = React.createClass({
         );
     }
 });
-
 
 module.exports = Page2;
