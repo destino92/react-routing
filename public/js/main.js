@@ -26130,13 +26130,18 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 
+var useRouterHistory = ReactRouter.useRouterHistory;
+var CreateHashHistory = require('react-router/node_modules/history/lib/createHashHistory');
+
+var History = useRouterHistory(CreateHashHistory)({ queryKey: false });
+
 var Base = require('./components/Base.jsx');
 var Page1 = require('./components/Page1.jsx');
 var Page2 = require('./components/Page1.jsx');
 
 var Routes = React.createElement(
     Router,
-    null,
+    { history: History },
     React.createElement(
         Route,
         { path: '/', component: Base },
@@ -26147,7 +26152,7 @@ var Routes = React.createElement(
 
 module.exports = Routes;
 
-},{"./components/Base.jsx":239,"./components/Page1.jsx":240,"react":236,"react-router":31}],239:[function(require,module,exports){
+},{"./components/Base.jsx":239,"./components/Page1.jsx":240,"react":236,"react-router":31,"react-router/node_modules/history/lib/createHashHistory":48}],239:[function(require,module,exports){
 var React = require('react');
 
 var Base = React.createClass({
